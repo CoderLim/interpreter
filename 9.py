@@ -413,7 +413,7 @@ class Interpreter(NodeVisitor):
         else:
             return val
 
-    def interpreter(self):
+    def interpret(self):
         tree = self.parser.parse()
         return self.visit(tree)
 
@@ -429,7 +429,7 @@ def main():
         lexer = Lexer(text)
         parser = Parser(lexer)
         interpreter = Interpreter(parser)
-        result = interpreter.interpreter()
+        result = interpreter.interpret()
         print(result)
 
 if __name__ == '__main__':
